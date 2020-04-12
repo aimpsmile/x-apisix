@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="51c10a6e-b845-46f5-a480-d26fa9f2d6de" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.golangci.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/x-apisix.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aimcmd/aimcmd.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aimcmd/util.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/aimerror/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/aimerror/aimerror.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/aimerror/aimerror_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/conf.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/conf_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/config/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/config/conf.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/config/conf_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/config/options.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/lib/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/lib/api/api_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/lib/api/request.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/lib/api/response.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/lib/debug/debug.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/lib/ecode/ecode.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/lib/ecode/ecode_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/lib/ecode/options.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/lib/encrypt/encrypt.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/lib/encrypt/encrypt_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/lib/file/file.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/lib/middle/middle.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/lib/middle/middle_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/lib/uctx/uctx.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/lib/uctx/uctx_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/logger/logger.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/logger/microlog/microlog.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/logger/microlog/microlog_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/logger/microlog/options.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/logger/options.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/logger/zaplog/array.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/logger/zaplog/field.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/logger/zaplog/writer/writer.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/logger/zaplog/zap.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/logger/zaplog/zap_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/testconf/options.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/testconf/testconf.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/testconf/testconf_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/install.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/monitor/BUILD.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/monitor/conf/conf.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/monitor/conf/conf_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/monitor/gateway/apisix/apisix.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/monitor/gateway/apisix/apisix_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/monitor/gateway/apisix/proto/proto.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/monitor/gateway/apisix/proto/proto_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/monitor/gateway/apisix/proto/types.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/monitor/gateway/apisix/route/route.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/monitor/gateway/apisix/route/route_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/monitor/gateway/apisix/route/types.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/monitor/gateway/apisix/service/service.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/monitor/gateway/apisix/service/service_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/monitor/gateway/apisix/service/types.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/monitor/gateway/apisix/upstream/types.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/monitor/gateway/apisix/upstream/upstream.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/monitor/gateway/apisix/upstream/upstream_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/monitor/gateway/gateway.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/monitor/gateway/options.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/monitor/gateway/types.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/monitor/gateway/util/lib.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/monitor/gateway/util/proto.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/monitor/gateway/util/proto_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/monitor/log/log.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/monitor/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/monitor/srv/debug.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/monitor/srv/default.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/monitor/srv/default_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/monitor/srv/options.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/monitor/srv/server.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/monitor/task/task.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/monitor/task/task_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/monitor/task/version.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/monitor/task/version_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/monitor/test/test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server.desgin.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/local/aimgo/.golangci.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/local/aimgo/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/local/aimgo/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/local/aimgo/new.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/local/aimgo/supervisor/before_start.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/local/aimgo/supervisor/inotify_watch.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/local/aimgo/supervisor/loads_buffer.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/local/aimgo/supervisor/supervisor_default.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/local/aimgo/supervisor/supervisor_monitor.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/local/aimgo/supervisord.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/local/broker.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/local/cache.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/local/db.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/local/gateway/apigw.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/local/global.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/local/passport/api.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/local/passport/http2.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/local/passport/srv.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/local/passport/web.yml" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="GOROOT" path="$PROJECT_DIR$/../../../../../../storage/go/go" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GoLibraries">
+    <option name="indexEntireGoPath" value="false" />
+  </component>
+  <component name="ProjectId" id="1aR2PjFjHKj1JHescIyIZh9XN2w" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="configurable.Global.GOPATH.is.expanded" value="true" />
+    <property name="configurable.Module.GOPATH.is.expanded" value="false" />
+    <property name="configurable.Project.GOPATH.is.expanded" value="true" />
+    <property name="go.import.settings.migrated" value="true" />
+    <property name="go.sdk.automatically.set" value="true" />
+    <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="go.vgo" />
+  </component>
+  <component name="VgoProject">
+    <integration-enabled>true</integration-enabled>
+    <environment>
+      <map>
+        <entry key="GOPROXY" value="https://goproxy.cn,direct" />
+      </map>
+    </environment>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="557" y="269" width="244" height="256" key="EnvironmentVariablesDialog" timestamp="1586684780240">
+      <screen x="0" y="25" width="1366" height="743" />
+    </state>
+    <state x="557" y="269" width="244" height="256" key="EnvironmentVariablesDialog/0.25.1366.743@0.25.1366.743" timestamp="1586684780240" />
+    <state x="209" y="32" key="SettingsEditor" timestamp="1586684785509">
+      <screen x="0" y="25" width="1366" height="743" />
+    </state>
+    <state x="209" y="32" key="SettingsEditor/0.25.1366.743@0.25.1366.743" timestamp="1586684785509" />
+    <state x="687" y="160" width="641" height="560" key="find.popup" timestamp="1586685201749">
+      <screen x="0" y="25" width="1366" height="743" />
+    </state>
+    <state x="687" y="160" width="641" height="560" key="find.popup/0.25.1366.743@0.25.1366.743" timestamp="1586685201749" />
+    <state x="408" y="312" width="544" height="171" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1586685803585">
+      <screen x="0" y="25" width="1366" height="743" />
+    </state>
+    <state x="408" y="312" width="544" height="171" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.25.1366.743@0.25.1366.743" timestamp="1586685803585" />
+  </component>
+</project>

@@ -1,0 +1,21 @@
+conf:
+  owner:
+    - "songxiuxuan"
+  module:
+    -
+      name: "aimgo.tool.v1.ingress"
+      open: true
+      sub: "monitor"
+      timeout: 20
+      appnum: 1
+      file:
+        - "main.go"
+      usage: "monitor microservice on service to gateway"
+      watchPath:
+        - "aimgo/"
+        - "aimtool/monitor/"
+      env:
+        MICRO_SERVER_VERSION: "v0.6.1"
+        AIM_GATEWAY: "apisix"
+      cron:
+      flag:
