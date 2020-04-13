@@ -13,8 +13,7 @@
 
 ## go-micro
 * 注册中心
-	* etcdv3
-	* 其实注册中心，需要后期优化代码
+	* etcdv3 - 其实注册中心，需要后期优化代码
 * web handler需要增加
 	* /stats(服务状态) service.HandleFunc("/stats", webhandler.StatusHandler())
 	* /health(健康检查) service.HandleFunc("/health", webhandler.HealthHandler())
@@ -48,7 +47,3 @@ make install
 # 执行
 make monitor
 ```
-
-
-
-
