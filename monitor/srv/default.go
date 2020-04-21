@@ -11,24 +11,22 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/micro/go-micro/v2/sync/leader"
-	"github.com/micro/go-micro/v2/sync/leader/etcd"
+	"github.com/micro-in-cn/x-apisix/core/lib/leader"
+	"github.com/micro-in-cn/x-apisix/core/lib/leader/etcd"
 
 	"github.com/micro-in-cn/x-apisix/core/logger/zaplog"
 	"github.com/micro-in-cn/x-apisix/monitor/conf"
 	"github.com/micro-in-cn/x-apisix/monitor/gateway"
 	"github.com/micro-in-cn/x-apisix/monitor/gateway/apisix"
 	"github.com/micro-in-cn/x-apisix/monitor/task"
-	"github.com/micro/go-micro/v2/client"
 	"github.com/micro/go-micro/v2/registry"
 	"github.com/micro/go-micro/v2/util/backoff"
 )
 
 type server struct {
-	options Options
+	options *Options
 
 	registry registry.Registry
-	client   client.Client
 	gateway  gateway.GatewayI
 
 	sync.RWMutex
@@ -99,8 +97,9 @@ func (m *server) health(service *registry.Service) {
 
 //	创建task任务
 func (m *server) newTask(action string, service *registry.Service, init bool) *task.TaskMsg {
-	t := task.NewMsg(action, service)
-	if t == nil {
+	t, err := task.NewMsg(action, service)
+	if err != nil {
+		zaplog.ML().Info("not.push.task", zaplog.NamedError("error_info", err))
 		return nil
 	}
 	if t.Action != task.ACTION_DELETE {
@@ -379,7 +378,7 @@ Loop:
 func (m *server) start(ctx context.Context) error {
 	lconf := conf.MConf().Leader
 	eleader := etcd.NewLeader(leader.Nodes(lconf.Nodes...), leader.Group(lconf.Group))
-	if ele, err := eleader.Elect(lconf.ID); err != nil {
+	if ele, err := eleader.Elect(ctx, lconf.ID); err != nil {
 		return err
 	} else {
 		m.ele = ele
@@ -464,7 +463,6 @@ func newServer(opts ...Option) Server {
 	}()
 
 	options := Options{
-		Client:   client.DefaultClient,
 		Registry: registry.DefaultRegistry,
 	}
 
@@ -487,7 +485,7 @@ func newServer(opts ...Option) Server {
 	numThread := runtime.NumCPU() * 2
 
 	return &server{
-		options:      options,
+		options:      &options,
 		numThread:    numThread,
 		isclear:      0,
 		wg:           &sync.WaitGroup{},
@@ -495,7 +493,6 @@ func newServer(opts ...Option) Server {
 		closeConsume: make(chan bool),
 		jobChan:      make(chan *task.TaskMsg, numThread),
 		errChan:      make(chan error),
-		client:       options.Client,
 		registry:     options.Registry,
 		gateway:      gw,
 	}

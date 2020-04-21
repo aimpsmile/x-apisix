@@ -48,7 +48,7 @@ func (r *Response) Into(data interface{}) error {
 	}
 
 	defer func() {
-		if err := r.res.Body.Close(); err != nil {
+		if err := r.Close(); err != nil {
 			fmt.Printf("http close body is error %v .", err)
 		}
 	}()

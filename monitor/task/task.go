@@ -36,17 +36,17 @@ type TaskMsg struct {
 }
 
 //	生成任务的信息列表
-func NewMsg(action string, service *registry.Service) *TaskMsg {
+func NewMsg(action string, service *registry.Service) (*TaskMsg, error) {
 	svar, err := ShouldSnameBeConf(service.Name, service.Version, conf.MConf())
 	if err != nil {
-		return nil
+		return nil, err
 	}
 	return &TaskMsg{
 		Action:    action,
 		Retries:   0,
 		Service:   service,
 		Svariable: svar,
-	}
+	}, nil
 }
 
 //	服务名称，解析成结构体
@@ -54,7 +54,7 @@ func ServiceNameToInfo(sname, version string) *Svariable {
 
 	info := aimcmd.ParseSname(sname)
 	//  生成proto.package名称
-	protoPackge := fmt.Sprintf("%s.%s.%s.%s", info.BU, info.Module, info.Stype, version)
+	protoPackge := fmt.Sprintf("%s.%s.%s.%s", info.BU, info.Module, info.Stype, info.Sver)
 	return &Svariable{
 		Sname:        info.Sname,
 		BU:           info.BU,
@@ -99,7 +99,10 @@ func ShouldSnameBeConf(sname, version string, c *conf.Conf) (*Svariable, error) 
 	info := ServiceNameToInfo(sname, version)
 	if info.Sname == "" || info.BU == "" ||
 		info.Module == "" || info.Stype == "" || info.Sver == "" {
-		return nil, fmt.Errorf("sname:%s sver object not match", sname)
+		estr := "[info]sname format not match[sname]%s[-][version]%s[BU]%s[Module]%s[Stype]%s[Sver]%s"
+		err := fmt.Errorf(estr,
+			sname, version, info.BU, info.Module, info.Stype, info.Sver)
+		return nil, err
 	}
 	for _, filter := range c.Filter {
 		if info.BU != filter.BU || info.Stype != filter.Stype {
@@ -117,5 +120,9 @@ func ShouldSnameBeConf(sname, version string, c *conf.Conf) (*Svariable, error) 
 		info.ModuleVeh.RouteTpl != "" && len(info.ModuleVeh.Hosts) != 0 {
 		return info, nil
 	}
-	return nil, fmt.Errorf("sname:%s not match conf", sname)
+	estr := "[info]not conf to match[sname]%s[version]%s[-][BU]%s[Module]%s[Stype]%s[Sver]%s[-][UpstreamTpl]%s[ServiceTpl]%s[RouteTpl]%s[Hosts]%s"
+	err := fmt.Errorf(estr,
+		sname, version, info.BU, info.Module, info.Stype, info.Sver, info.ModuleVeh.UpstreamTpl,
+		info.ModuleVeh.ServiceTpl, info.ModuleVeh.RouteTpl, info.ModuleVeh.Hosts)
+	return nil, err
 }

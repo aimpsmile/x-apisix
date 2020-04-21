@@ -126,7 +126,7 @@ func TestFindByDesc(t *testing.T) {
 		t.Log("findServiceIDByDesc[service_id]", serviceID)
 	}
 	//	写入操作
-	sID, serr := s.Write( data, confPath)
+	sID, serr := s.Write(data, confPath)
 	if serr != nil {
 		t.Fatal(serr)
 	} else {

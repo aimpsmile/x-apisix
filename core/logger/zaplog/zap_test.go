@@ -8,9 +8,9 @@ import (
 	"log"
 	"testing"
 
+	"github.com/google/uuid"
 	"github.com/micro-in-cn/x-apisix/core/config"
 	"github.com/micro-in-cn/x-apisix/core/testconf"
-	"github.com/google/uuid"
 	. "github.com/smartystreets/goconvey/convey"
 	"go.uber.org/zap"
 )

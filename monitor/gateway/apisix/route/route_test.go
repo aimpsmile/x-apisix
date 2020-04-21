@@ -240,7 +240,7 @@ func aTestWriteRoute(t *testing.T) {
 	}
 	fmt.Println(plist)
 	//	写入操作
-	rID, serr := r.Write( data, true, confPath, upstreamID, plist)
+	rID, serr := r.Write(data, true, confPath, upstreamID, plist)
 	if serr != nil {
 		t.Fatal(serr)
 	} else {

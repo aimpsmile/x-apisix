@@ -6,9 +6,9 @@ import (
 	"reflect"
 	"testing"
 
+	jsoniter "github.com/json-iterator/go"
 	"github.com/micro-in-cn/x-apisix/core/lib/api"
 	"github.com/micro-in-cn/x-apisix/monitor/conf"
-	jsoniter "github.com/json-iterator/go"
 )
 
 type Testcase struct {

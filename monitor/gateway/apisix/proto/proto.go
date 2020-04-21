@@ -7,12 +7,12 @@ import (
 	"io/ioutil"
 	"time"
 
+	jsoniter "github.com/json-iterator/go"
 	"github.com/micro-in-cn/x-apisix/core/aimerror"
 	"github.com/micro-in-cn/x-apisix/core/lib/api"
 	"github.com/micro-in-cn/x-apisix/monitor/conf"
 	"github.com/micro-in-cn/x-apisix/monitor/gateway/util"
 	"github.com/micro-in-cn/x-apisix/monitor/task"
-	jsoniter "github.com/json-iterator/go"
 )
 
 const ResourceName = "proto"

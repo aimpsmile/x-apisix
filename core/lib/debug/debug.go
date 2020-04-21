@@ -52,6 +52,12 @@ func StopProf() {
 	stopBlock()
 	mlog.Debug("[END_PPROF] success!!!")
 }
+func StartHttpProf(httpPort string) {
+	go func() {
+		err := http.ListenAndServe(httpPort, nil)
+		mlog.Info("pprof.http.tracer %v", err)
+	}()
+}
 
 //	打印cpu与内存的信息
 func StartProf(dir, sName, httpPort string) {

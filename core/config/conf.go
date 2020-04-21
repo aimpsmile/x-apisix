@@ -15,10 +15,7 @@ type WatchFunc func(name ...string) (err error)
 type SourceList []source.Source
 type Source source.Source
 
-var instance = &configurator{conf: func() config.Config {
-	c, _ := config.NewConfig()
-	return c
-}()}
+var instance = &configurator{conf: config.DefaultConfig}
 
 func FileConf(p, f string) source.Source {
 

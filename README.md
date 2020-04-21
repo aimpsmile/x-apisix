@@ -30,8 +30,21 @@
 	* **apisix**模板配置选项，如果初始化，最好设置好格式，否则apisix会报错，由其是key=>val
 	* **x-apisix**理论上讲可以支持grpc的，但是由于**apisix**的grpc转http插件并不稳定，所以不建议使用
 
+## TODO
+* 兼容apisix v1.2版本测试
+* 增加使用apisix插件使用组合
+* 兼容go-micro所有的注册中心
+* 丰富demo，让大家可以快速使用apisix网关
+* 完善守护程序的单元测试
+* 兼容grpc转http协议更可靠性
+* 快速进入pre-release状态
+* 麻烦使用go-micro/v1用户看看是否可以兼容，如果不兼容，是否需要兼容
+
+
 ## demo
-* TODO...
+* 本项目长期维护,最
+* 招一个开源合作者，与我一起长期维护些项目
+* [TODO...](https://github.com/aimpsmile/x-apisix-example)
 
 ## x-apisix
 * 设计文档
